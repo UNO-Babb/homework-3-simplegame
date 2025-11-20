@@ -1,1 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wizard Duel (Simple)</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #222;
+            color: #eee;
+            padding: 20px;
+        }
+        .board {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .tile {
+            width: 60px;
+            height: 60px;
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 4px;
+            position: relative;
+            text-align: center;
+            padding-top: 15px;
+        }
+        .p1, .p2 {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin: auto;
+        }
+        .p1 { background: green; }
+        .p2 { background: blue; }
+        .rune {
+            font-size: 0.7rem;
+            color: gold;
+            position: absolute;
+            bottom: 4px;
+            width: 100%;
+        }
+        .buttons button {
+            margin-right: 10px;
+            padding: 6px 12px;
+        }
+        .message {
+            margin-top: 15px;
+            background: #444;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
 
+<h1 style="text-align:center;">Wizard Duel (Simple)</h1>
+<p style="text-align:center;">Current Turn: {{ turn }}</p>
+<div class="buttons" style="text-align:center;">
+    <a href="{{ url_for('move') }}"><button>Move</button></a>
+    <a href="{{ url_for('reset') }}"><button>Reset Game</button></a>
+</div>
+{% if last_message %}
+<div class="message">{{ last_message }}</div>
+{% endif %}
+<div class="board">
+    {% for i in range(1, board_size + 1) %}
+        <div class="tile">
+            {% if positions["Player1"] == i %}
+                <div class="p1"></div>
+            {% endif %}
+            {% if positions["Player2"] == i %}
+                <div class="p2"></div>
+            {% endif %}
+            {% if i in runes %}
+                <div class="rune">{{ runes[i] }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+<p style="text-align:center; margin-top:20px;">
+    <strong>Scores:</strong><br>
+    Player1: {{ scores["Player1"] }}<br>
+    Player2: {{ scores["Player2"] }}
+</p>
+</body>
+</html>
