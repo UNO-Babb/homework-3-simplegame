@@ -1,13 +1,8 @@
 Turn: Player1
 P1: 1
-P2: 12
-
-Runes1: Fire, Lightning
-Runes2: (empty)
-
-Frozen1: 0
-Frozen2: 1
+P2: 10
+Score1: 0
+Score2: 0
 
 3: Fire
-6: Ice
-9: Lightning
+7: Ice
