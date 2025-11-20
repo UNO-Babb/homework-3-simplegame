@@ -1,13 +1,13 @@
 Turn: Player1
-Position1: 1
-Position2: 1
-Score1: 0
-Score2: 0
-Skip1: 0
-Skip2: 0
+P1: 1
+P2: 12
 
-3: Treasure
-5: Trap
-10: Hotel
-14: Troll
-17: Treasure
+Runes1: Fire, Lightning
+Runes2: (empty)
+
+Frozen1: 0
+Frozen2: 1
+
+3: Fire
+6: Ice
+9: Lightning
