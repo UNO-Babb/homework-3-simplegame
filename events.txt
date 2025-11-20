@@ -1,1 +1,13 @@
+Turn: Player1
+Position1: 1
+Position2: 1
+Score1: 0
+Score2: 0
+Skip1: 0
+Skip2: 0
 
+3: Treasure
+5: Trap
+10: Hotel
+14: Troll
+17: Treasure
